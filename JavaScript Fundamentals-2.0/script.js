@@ -120,6 +120,7 @@ let resultss = (a + b < 4) ? 'Below' : 'Over';
 
 // For readability, it’s recommended to split the code into multiple lines.
 let message;
+let login = "Employee";
 
 if (login == 'Employee') {
   message = 'Hello';
@@ -152,6 +153,7 @@ alert( null || 2 && 3 || 4 ); // 3
 
 //Write an if condition to check that age is between 14 and 90 inclusively.
 // “Inclusively” means that age can reach the edges 14 or 90.
+let age;
 if (age >= 14 && age <= 90);
 
 // Write an if condition to check that age is NOT between 14 and 90 inclusively.
@@ -207,6 +209,7 @@ while(h < 3){
 }
 
 //Write the code using if..else which would correspond to the following switch:
+let browser = 'Edge';
 switch (browser) {
   case 'Edge':
     alert( "You've got the Edge!" );
@@ -299,27 +302,31 @@ function checkAge(age) {
 
 //Write a function min(a,b) which returns the least of two numbers a and b.
 // For instance
-min(2, 5) == 2
+/* min(2, 5) == 2
 min(3, -1) == -1
 min(1, 1) == 1
+*/
 
-function min(a, b) {
+function number(a, b) {
   if (a < b) {
     return a;
   } else {
     return b;
   }
 }
+console.log(number(2, 5));
 
 //Write a function pow(x,n) that returns x in power n. Or, in other words, multiplies x by itself n times and returns the result.
 // pow(3, 2) = 3 * 3 = 9
 // pow(3, 3) = 3 * 3 * 3 = 27
 
-function pow(a, b) {
+function pow(x, n) {
   let result = 1;
 
-  for (let i = 0; i < b; i++) {
-    result *= a;
+  for (let i = 0; i < n; i++) {
+    result *= x;
   }
   return result;
 }
+
+console.log(pow(3, 2));
