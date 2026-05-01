@@ -90,3 +90,87 @@ let array = [5, 2, 1, -10, 8];
 array.sort((a, b) => b - a);
 
 alert( array );
+
+// There’s an array of messages as in the previous task. The situation is similar.
+let messages = [
+  {text: "Hello", from: "John"},
+  {text: "How goes?", from: "John"},
+  {text: "See you soon", from: "Alice"}
+];
+
+let readMap = new WeakMap();
+
+readMap.set(messages[0], new Date(2017, 1, 1));
+
+// Write the function sumSalaries(salaries) that returns the sum of all salaries using Object.values and the for..of loop.
+function sumSalaries(salaries) {
+
+  let sum = 0;
+  for (let salary of Object.values(salaries)) {
+    sum += salary;
+  }
+
+  return sum; // 650
+}
+
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+alert( sumSalaries(salaries) );
+
+//  Write a function count(obj) that returns the number of properties in the object:
+let user = {
+  name: 'John',
+  age: 30
+};
+
+alert( count(user) ); // 2
+
+function count(obj) {
+  return Object.keys(obj).length;
+}
+
+/*
+Write the destructuring assignment that reads:
+
+name property into the variable name.
+years property into the variable age.
+isAdmin property into the variable isAdmin (false, if no such property)
+*/
+let users = {
+  name: "John",
+  years: 30
+};
+
+let {name, years: age, isAdmin = false} = users;
+
+alert( name ); // John
+alert( age ); // 30
+alert( isAdmin ); // false
+
+// Create a Date object for the date: Feb 20, 2012, 3:12am. The time zone is local.
+let d1 = new Date(2012, 1, 20, 3, 12);
+alert( d1 );
+
+// Write a function getWeekDay(date) to show the weekday in short format: ‘MO’, ‘TU’, ‘WE’, ‘TH’, ‘FR’, ‘SA’, ‘SU’.
+function getWeekDay(date) {
+  let days = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
+
+  return days[date.getDay()];
+}
+
+let date = new Date(2014, 0, 3); 
+alert( getWeekDay(date) );
+
+// Create a function getDateAgo(date, days) to return the day of month days ago from the date.
+
+// Turn the user into JSON and then read it back into another variable.
+let userss = {
+  name: "John Smith",
+  age: 35
+};
+
+let user2 = JSON.parse(JSON.stringify(userss));
